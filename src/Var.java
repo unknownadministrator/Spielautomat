@@ -25,7 +25,6 @@ public class Var {
         frame.setSize(width, height);
         frame.setLocationRelativeTo(null);
         frame.add(new Gui());
-        frame.setResizable(false);
         frame.setVisible(true);
 
 
