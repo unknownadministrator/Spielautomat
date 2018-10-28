@@ -27,6 +27,7 @@ public class Var {
         frame.add(new Gui());
         frame.setFocusable(false);
         frame.setVisible(true);
+        System.out.println("nur ein test");
 
 
 
