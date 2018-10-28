@@ -37,7 +37,8 @@ public class Extras {
 
                     if(Integer.parseInt(Var.money.getText()) < 1){
 
-                    System.exit(0);
+                        JOptionPane.showMessageDialog(null, "Kein Geld verfügbar", "Error", JOptionPane.WARNING_MESSAGE);
+                        System.exit(0);
 
                 }
             }
