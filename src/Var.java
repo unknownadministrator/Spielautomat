@@ -27,7 +27,6 @@ public class Var {
         frame.add(new Gui());
         frame.setFocusable(false);
         frame.setVisible(true);
-        frame.setLocation(0, 0);
 
 
 
