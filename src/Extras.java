@@ -16,8 +16,30 @@ public class Extras {
         Var.spin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(Var.gewinn.getText().equals("Payback")){
+                    Var.neu = Var.neu + einzahlen + 4;
+                    Var.money.setText(String.valueOf(Var.neu));
 
-                Abfrage();
+
+                }else if (Var.gewinn.getText().equals("Verloren")){
+
+                    jackpot = Integer.parseInt(Var.automat.getText());
+                    jackpot = jackpot + einzahlen;
+                    Var.automat.setText(String.valueOf(jackpot));
+
+                }else if (Var.gewinn.getText().equals("Jackpot")){
+                    Var.neu = Var.neu + einzahlen + jackpot;
+                    jackpot = 0;
+                    Var.automat.setText(String.valueOf(jackpot));
+                    Var.money.setText(String.valueOf(Var.neu));
+
+}
+
+                    if(Integer.parseInt(Var.money.getText()) < 1){
+
+                    System.exit(0);
+
+                }
             }
         });
         Var.spin.addActionListener(new ActionListener() {
@@ -62,7 +84,7 @@ public class Extras {
 
     public static void anderes(){
 
-        Var.ich = new JLabel("Spielautomat by Maximilian Strauß: v1.1");
+        Var.ich = new JLabel("Spielautomat by Maximilian Strauß: v1.2");
         Var.ich.setBounds(0, 0, 350, 20);
         Var.ich.setVisible(true);
         Var.deingeld = new JLabel("Geld:");
@@ -87,29 +109,9 @@ public class Extras {
     }
 
 
-    public static void Abfrage(){
 
 
-        if(Var.gewinn.getText().equals("Payback")){
-            Var.neu = Var.neu + einzahlen + 4;
-            Var.money.setText(String.valueOf(Var.neu));
 
-
-        }else if (Var.gewinn.getText().equals("Verloren")){
-
-            jackpot = Integer.parseInt(Var.automat.getText());
-            jackpot = jackpot + einzahlen;
-            Var.automat.setText(String.valueOf(jackpot));
-
-        }else if (Var.gewinn.getText().equals("Jackpot")){
-            Var.neu = Var.neu + einzahlen + jackpot;
-            jackpot = 0;
-            Var.automat.setText(String.valueOf(jackpot));
-            Var.money.setText(String.valueOf(Var.neu));
-
-        }
-
-    }
 
 
 
