@@ -30,7 +30,7 @@ public class Knopf {
                 Var.text2.setText(Var.birne);
                 Var.text3.setText(Var.birne);
             }
-        } else if(ws < 30){
+        } else if(ws < 40){
             while(Stelle == Stelle2 || Art == Art2 || Stelle == Stelle3 || Stelle3 == Stelle2){
 
                 Stelle = (int) (Math.random() * 3);

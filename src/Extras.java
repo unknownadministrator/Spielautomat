@@ -16,6 +16,7 @@ public class Extras {
         Var.spin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 Abfrage();
             }
         });

@@ -30,7 +30,6 @@ public class Gui extends JPanel {
         Extras.money();
 
 
-
     }
 
     @Override
@@ -40,11 +39,11 @@ public class Gui extends JPanel {
         g.fillRect(Var.width / 2 - 150, Var.height / 2 - 90, 60, 83);
         g.fillRect(Var.width / 2 - 80, Var.height / 2 - 90, 60, 83);
         g.fillRect(Var.width / 2 - 9, Var.height / 2 - 90, 60, 83);
+
         Extras.zahlen();
         Extras.Button();
 
         add(Var.spin);
-
         add(Var.money);
         add(Var.text1);
         add(Var.text2);
@@ -55,6 +54,7 @@ public class Gui extends JPanel {
         add(Var.deingeld);
         add(Var.derautomat);
         add(Var.bildautomat);
+
     }
 
 }
