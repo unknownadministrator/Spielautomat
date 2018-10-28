@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.TimerTask;
 
 
 public class Extras {
@@ -14,26 +15,35 @@ public class Extras {
         Var.spin = new JButton("Spin");
 
         Var.spin.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(Var.gewinn.getText().equals("Payback")){
-                    Var.neu = Var.neu + einzahlen + 4;
-                    Var.money.setText(String.valueOf(Var.neu));
+
+                Knopf.t.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if(Var.gewinn.getText().equals("Payback")){
+                            Var.neu = Var.neu + einzahlen + 4;
+                            Var.money.setText(String.valueOf(Var.neu));
 
 
-                }else if (Var.gewinn.getText().equals("Verloren")){
+                        }else if (Var.gewinn.getText().equals("Verloren")){
 
-                    jackpot = Integer.parseInt(Var.automat.getText());
-                    jackpot = jackpot + einzahlen;
-                    Var.automat.setText(String.valueOf(jackpot));
+                            jackpot = Integer.parseInt(Var.automat.getText());
+                            jackpot = jackpot + einzahlen;
+                            Var.automat.setText(String.valueOf(jackpot));
 
-                }else if (Var.gewinn.getText().equals("Jackpot")){
-                    Var.neu = Var.neu + einzahlen + jackpot;
-                    jackpot = 0;
-                    Var.automat.setText(String.valueOf(jackpot));
-                    Var.money.setText(String.valueOf(Var.neu));
+                        }else if (Var.gewinn.getText().equals("Jackpot")){
+                            Var.neu = Var.neu + einzahlen + jackpot;
+                            jackpot = 0;
+                            Var.automat.setText(String.valueOf(jackpot));
+                            Var.money.setText(String.valueOf(Var.neu));
 
-}
+                        }
+                    }
+                }, 6 * 1002);
+
+
 
                     if(Integer.parseInt(Var.money.getText()) < 1){
 
