@@ -18,7 +18,7 @@ public class Gui extends JPanel {
 
         setLayout(null);
         repaint();
-        //TEst
+
         ImageIcon icon = new ImageIcon(getClass().getResource("Automat.png"));
         Var.bildautomat = new JLabel(icon);
         Var.bildautomat.setBounds(0, -70, 707, 720);

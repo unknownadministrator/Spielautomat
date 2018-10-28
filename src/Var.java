@@ -6,8 +6,8 @@ public class Var {
 
     public static JTextField text1, text2, text3, gewinn, money, automat;
     public JFrame frame;
-    public static int width = 800;
-    public static int height = 700;
+    public static int width = 799;
+    public static int height = 699;
     public static JButton spin;
     public static JLabel ich, deingeld, derautomat, bildautomat;
     static String geld;
@@ -25,9 +25,9 @@ public class Var {
         frame.setSize(width, height);
         frame.setLocationRelativeTo(null);
         frame.add(new Gui());
-        frame.setFocusable(false);
+        frame.setResizable(false);
         frame.setVisible(true);
-
+        frame.setSize(width + 1, height + 1);
 
 
 
