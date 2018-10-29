@@ -3,7 +3,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Knopf {
-    public static int delay1 = 2, delay2 = 4, delay3 = 6;
+    public static int delay1 = 2, delay2 = 5, delay3 = 10;
     public static int ws, Art, Art2 , Art3, Stelle, Stelle2, Stelle3;
     static Timer t = new Timer();
 
@@ -613,7 +613,7 @@ public class Knopf {
 
 
             }
-        }, 6 * 1001);
+        }, delay3 * 1001);
 
 
 

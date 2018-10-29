@@ -7,7 +7,7 @@ import java.util.TimerTask;
 
 public class Extras {
 
-    static int einzahlen = 8;
+    static int einzahlen = 1, payback = 2;
     static int jackpot;
 
     public static void Button() {
@@ -50,7 +50,7 @@ public class Extras {
                         Var.spin.setEnabled(true);
 
                         if(Var.gewinn.getText().equals("Payback")){
-                            Var.neu = Var.neu + einzahlen + 4;
+                            Var.neu = Var.neu + einzahlen + payback;
                             Var.money.setText(String.valueOf(Var.neu));
                         }else if (Var.gewinn.getText().equals("Verloren")){
 
@@ -68,7 +68,7 @@ public class Extras {
 
 
                     }
-                }, 6 * 1002);
+                }, Knopf.delay3 * 1002);
 
             }
         });
