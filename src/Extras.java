@@ -13,20 +13,45 @@ public class Extras {
     public static void Button() {
 
         Var.spin = new JButton("Spin");
-
+        Var.spin.setBounds(500, 175, 90, 30);
         Var.spin.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                Var.spin.setEnabled(false);
+
+
+                Var.neu = Var.neu - einzahlen;
+                Var.money.setText(String.valueOf(Var.neu));
+                Knopf.Knopf();
+
+                if(Integer.parseInt(Var.money.getText()) < 0){
+                    Var.frame.dispose();
+                    JOptionPane.showMessageDialog(null, "Kein Geld verfügbar", "Error", JOptionPane.WARNING_MESSAGE);
+                    System.exit(0);
+
+
+
+
+
+
+
+                }
+            }
+        });
+
+        Var.spin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 Knopf.t.schedule(new TimerTask() {
                     @Override
                     public void run() {
+
+                        Var.spin.setEnabled(true);
+
                         if(Var.gewinn.getText().equals("Payback")){
                             Var.neu = Var.neu + einzahlen + 4;
                             Var.money.setText(String.valueOf(Var.neu));
-
-
                         }else if (Var.gewinn.getText().equals("Verloren")){
 
                             jackpot = Integer.parseInt(Var.automat.getText());
@@ -38,34 +63,17 @@ public class Extras {
                             jackpot = 0;
                             Var.automat.setText(String.valueOf(jackpot));
                             Var.money.setText(String.valueOf(Var.neu));
-
                         }
+
+
+
                     }
                 }, 6 * 1002);
 
-
-
-                    if(Integer.parseInt(Var.money.getText()) < 1){
-
-                        JOptionPane.showMessageDialog(null, "Kein Geld verfügbar", "Error", JOptionPane.WARNING_MESSAGE);
-                        System.exit(0);
-
-                }
-            }
-        });
-        Var.spin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                Var.neu = Var.neu - einzahlen;
-                Var.money.setText(String.valueOf(Var.neu));
-                Knopf.Knopf();
-
             }
         });
 
 
-        Var.spin.setBounds(500, 175, 90, 30);
         Var.spin.setFont(new Font(Var.spin.getFont().getFontName(), Font.BOLD, 25));
         Var.spin.setVisible(true);
 
@@ -75,6 +83,8 @@ public class Extras {
 
         Var.gewinn = new JTextField("");
         Var.gewinn.setBounds(300, 515, 110, 60);
+        Var.gewinn.setFont(new Font(Var.gewinn.getFont().getFontName(), Font.BOLD,  25));
+        Var.gewinn.setEditable(false);
         Var.gewinn.setVisible(true);
 
     }
@@ -83,12 +93,15 @@ public class Extras {
 
         Var.text1 = new JTextField("");
         Var.text1.setBounds(Var.width / 2 - 145, Var.height / 2 - 60,  50, 20);
+        Var.text1.setEditable(false);
         Var.text1.setVisible(true);
         Var.text2 = new JTextField("");
         Var.text2.setBounds(Var.width / 2 - 75, Var.height / 2 - 60, 50, 20);
+        Var.text2.setEditable(false);
         Var.text2.setVisible(true);
         Var.text3 = new JTextField("");
         Var.text3.setBounds(Var.width / 2 - 4, Var.height / 2 - 60, 50, 20);
+        Var.text3.setEditable(false);
         Var.text3.setVisible(true);
 
     }
@@ -109,12 +122,14 @@ public class Extras {
 
     public static void money(){
 
-        Var.money = new JTextField(Var.geld );
+        Var.money = new JTextField(Var.geld);
         Var.money.setBounds( Var.width - 110, 0, 100, 20);
+        Var.money.setEditable(false);
         Var.money.setVisible(true);
 
         Var.automat = new JTextField("0");
         Var.automat.setBounds( Var.width - 110, 20, 100, 20);
+        Var.automat.setEditable(false);
         Var.automat.setVisible(true);
 
     }

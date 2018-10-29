@@ -12,10 +12,6 @@ public class Gui extends JPanel {
 
     public Gui(){
 
-
-
-
-
         setLayout(null);
         repaint();
 
@@ -24,11 +20,10 @@ public class Gui extends JPanel {
         Var.bildautomat.setBounds(0, -70, 707, 720);
         Var.bildautomat.setVisible(true);
 
-
         Extras.Gewinn();
         Extras.anderes();
         Extras.money();
-
+        Extras.Button();
 
     }
 
@@ -40,8 +35,12 @@ public class Gui extends JPanel {
         g.fillRect(Var.width / 2 - 80, Var.height / 2 - 90, 60, 83);
         g.fillRect(Var.width / 2 - 9, Var.height / 2 - 90, 60, 83);
 
+
+
         Extras.zahlen();
-        Extras.Button();
+
+
+
 
         add(Var.spin);
         add(Var.money);

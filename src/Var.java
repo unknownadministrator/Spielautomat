@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Var {
 
     public static JTextField text1, text2, text3, gewinn, money, automat;
-    public JFrame frame;
+    public static JFrame frame;
     public static int width = 799;
     public static int height = 699;
     public static JButton spin;
@@ -17,10 +17,10 @@ public class Var {
 
     public Var(){
 
-        geld = JOptionPane.showInputDialog(null, "Geld:", "Abfrage", JOptionPane.PLAIN_MESSAGE);
+
         Input();
 
-        frame = new JFrame();
+        frame = new JFrame("Spielautomat");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(width, height);
         frame.setLocationRelativeTo(null);
@@ -32,17 +32,17 @@ public class Var {
 
 
 
+
     }
 
     public static void Input(){
-
+        geld = JOptionPane.showInputDialog(null, "Geld:", "Abfrage", JOptionPane.PLAIN_MESSAGE);
         try {
             neu = Integer.parseInt(geld);
 
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Failed to load application!", "Error", JOptionPane.WARNING_MESSAGE);
-            e.printStackTrace();
-            System.exit(0);
+            Input();
 
 
         }

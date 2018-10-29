@@ -6,10 +6,9 @@ public class Knopf {
     public static int delay1 = 2, delay2 = 4, delay3 = 6;
     public static int ws, Art, Art2 , Art3, Stelle, Stelle2, Stelle3;
     static Timer t = new Timer();
+
+
     public static void Knopf(){
-
-
-
 
         Var.text1.setText("");
         Var.text2.setText("");
@@ -597,6 +596,7 @@ public class Knopf {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
+
                 if(Var.text1.getText().equals(Var.text2.getText()) && Var.text2.getText().equals(Var.text3.getText())){
 
                     Var.gewinn.setText("Jackpot");
@@ -610,6 +610,8 @@ public class Knopf {
                     Var.gewinn.setText("Verloren");
 
                 }
+
+
             }
         }, 6 * 1001);
 
