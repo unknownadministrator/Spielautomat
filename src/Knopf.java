@@ -86,7 +86,7 @@ public class Knopf {
                 }, delay3 * 1000);
 
             }
-        } else if(ws < 40){
+        } else if(ws < 30){
             while(Stelle == Stelle2 || Art == Art2 || Stelle == Stelle3 || Stelle3 == Stelle2){
 
                 Stelle = (int) (Math.random() * 3);
