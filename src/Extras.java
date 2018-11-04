@@ -2,13 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 import java.util.TimerTask;
 
 
 public class Extras {
 
     static int einzahlen = 1, payback = 2;
-    static int jackpot;
+    static int jackpot, output;
 
     public static void Button() {
 
@@ -66,6 +71,22 @@ public class Extras {
                         }
 
 
+                        FileWriter writer;
+                        File datei = new File("jackpot.txt");
+
+
+                            try {
+
+                                writer = new FileWriter(datei);
+                                writer.write(String.valueOf(jackpot));
+                                writer.flush();
+                                writer.close();
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+
 
                     }
                 }, Knopf.delay3 * 1002);
@@ -108,7 +129,7 @@ public class Extras {
 
     public static void anderes(){
 
-        Var.ich = new JLabel("Spielautomat by Maximilian Strauß: v1.2");
+        Var.ich = new JLabel("Spielautomat by Maximilian Strauß: v1.3");
         Var.ich.setBounds(0, 0, 350, 20);
         Var.ich.setVisible(true);
         Var.deingeld = new JLabel("Geld:");
@@ -127,7 +148,18 @@ public class Extras {
         Var.money.setEditable(false);
         Var.money.setVisible(true);
 
-        Var.automat = new JTextField("0");
+        File daten = new File("jackpot.txt");
+
+        Scanner sc = null;
+        try {
+            sc = new Scanner(daten);
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+        while (sc.hasNextLine()) {
+            output = Integer.parseInt(sc.nextLine());
+        }
+        Var.automat = new JTextField(String.valueOf(output));
         Var.automat.setBounds( Var.width - 110, 20, 100, 20);
         Var.automat.setEditable(false);
         Var.automat.setVisible(true);
