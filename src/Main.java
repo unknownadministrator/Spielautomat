@@ -5,13 +5,6 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-
-        new Var();
-        new Gui();
-        new Extras();
-        new Knopf();
-
-
         FileWriter writer;
         File datei = new File("jackpot.txt");
 
@@ -28,6 +21,13 @@ public class Main {
                 e.printStackTrace();
             }
         }
+        new Var();
+        new Gui();
+        new Extras();
+        new Knopf();
+
+
+
 
     }
 }
